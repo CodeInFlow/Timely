@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "107499741790",
+    "project_id": "hack-this-fall-4de4e",
+    "storage_bucket": "hack-this-fall-4de4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107499741790:android:b1e13eadb8513315278acf",
+        "android_client_info": {
+          "package_name": "com.codeinflow.timely"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107499741790-m0rhcj4253eqfvkmkct1jms0bcdui31h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFm0orVLTFxuAEs9woknhi5uARjRaQhYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107499741790-m0rhcj4253eqfvkmkct1jms0bcdui31h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
