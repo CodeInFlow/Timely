@@ -33,7 +33,7 @@
         android:layout_weight="20"
         android:fontFamily="@font/lato_thin"
         android:textColor="@color/black"
-        android:text="We're the biggest street gang in  India We're the POLICE."
+        android:text="We can do this the easy way or the hard way, but either way, it's gonna be done."
         android:textAlignment="center" />
 
     <View
@@ -45,7 +45,7 @@
         android:id="@+id/btnStart"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="Get Start"
+        android:text="Next"
         android:textSize="18sp"
         android:textAllCaps="false"
         android:layout_gravity="center"
