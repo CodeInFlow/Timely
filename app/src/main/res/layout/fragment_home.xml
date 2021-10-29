@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".home"
+    android:weightSum="100"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <View
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="0dp"
+        android:layout_weight="40" />
 
-</FrameLayout>
+
+
+    <ImageButton
+        android:id="@+id/btn_scan"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_scan"
+        android:background="@drawable/rounded_et"
+        android:backgroundTint="@color/themeColor"
+        android:layout_gravity="center_horizontal"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="12"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_ls"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/ls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Scanned : "
+            />
+
+        <TextView
+            android:id="@+id/currentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ls"
+            android:text="23:30"
+            />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/checkPoint"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:textColor="@color/black"
+        android:text="Andheri(W)                        Mumbai,Maharashtra,INDIA"
+        android:gravity="center_horizontal"
+        android:textSize="18sp"
+        android:layout_marginTop="18dp"/>
+
+
+
+
+</LinearLayout>
