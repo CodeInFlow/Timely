@@ -1,14 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeInspector">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_si1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                android:id="@+id/si1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Under Sub Inspector  "
+                android:fontFamily="@font/lato_bold"
+                />
+
+            <TextView
+                android:id="@+id/si1_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/si1"
+                android:text="Ssurav Singh "
+                android:fontFamily="@font/lato_bold"
+                android:textColor="@color/blue"
+                />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_si1"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="10dp"
+            android:overScrollMode="never"
+            android:paddingBottom="20dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_si2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                android:id="@+id/si2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Under Sub Inspector  "
+                android:fontFamily="@font/lato_bold"
+                />
+
+            <TextView
+                android:id="@+id/si2_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/si2"
+                android:text="Ssurav Singh "
+                android:fontFamily="@font/lato_bold"
+                android:textColor="@color/blue"
+                />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_si2"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="25dp"
+            android:overScrollMode="never"
+            android:paddingBottom="20dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_si3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                android:id="@+id/si3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Under Sub Inspector  "
+                android:fontFamily="@font/lato_bold"
+                />
+
+            <TextView
+                android:id="@+id/si3_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/si3"
+                android:text="Ssurav Singh "
+                android:fontFamily="@font/lato_bold"
+                android:textColor="@color/blue"
+                />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_si3"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="25dp"
+            android:overScrollMode="never"
+            android:paddingBottom="20dp" />
+
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
