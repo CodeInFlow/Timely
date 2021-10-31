@@ -42,28 +42,28 @@ public class Main2Activity extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    if(a.length()==9){
+                    if (a.length() == 9) {
                         fragment = new home();
-                        Log.d("Auth","Constable");
+                        Log.d("Auth", "Constable");
                     }
-                    if(a.length()==13){
+                    if (a.length() == 13) {
 
                         fragment = new HomeSubInsp();
-                        Log.d("Auth","Sub Inspector");
+                        Log.d("Auth", "Sub Inspector");
                     }
-                    if(a.length()==3){
+                    if (a.length() == 3) {
                         fragment = new HomeInspector();
 
-                        Log.d("Auth","Inspector");
+                        Log.d("Auth", "Inspector");
                     }
                     break;
                 case R.id.navigation_profile:
 
 
-                    Toast.makeText(Main2Activity.this,"Profile",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Main2Activity.this, "Profile", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.navigation_announcements:
-                    Toast.makeText(Main2Activity.this,"Announcements",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Main2Activity.this, "Announcements", Toast.LENGTH_SHORT).show();
 
                     break;
             }
@@ -103,17 +103,17 @@ public class Main2Activity extends AppCompatActivity {
                         if (document != null) {
                             a = document.getString("desig");
                             Log.d("LOGGER", a);
-                            if(a.length()==9){
+                            if (a.length() == 9) {
                                 fragment = new home();
-                                Log.d("Auth","Constable");
+                                Log.d("Auth", "Constable");
                             }
-                            if(a.length()==13){
+                            if (a.length() == 13) {
                                 fragment = new HomeSubInsp();
-                                Log.d("Auth","Sub Inspector");
+                                Log.d("Auth", "Sub Inspector");
                             }
-                            if(a.length()==3){
+                            if (a.length() == 3) {
                                 fragment = new HomeInspector();
-                                Log.d("Auth","Inspector");
+                                Log.d("Auth", "Inspector");
                             }
 
                             navView.setSelectedItemId(R.id.navigation_home);

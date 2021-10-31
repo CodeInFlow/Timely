@@ -25,8 +25,8 @@ import java.util.List;
 
 public class HomeInspector extends Fragment {
 
-    private RecyclerView ConstableRV1,ConstableRV2,ConstableRV3;
-    private ArrayList<ConstableModel> ConstableArrayList1,ConstableArrayList2,ConstableArrayList3;
+    private RecyclerView ConstableRV1, ConstableRV2, ConstableRV3;
+    private ArrayList<ConstableModel> ConstableArrayList1, ConstableArrayList2, ConstableArrayList3;
     private ConstableAdapter ConstableRVAdapter;
     private FirebaseFirestore db;
 

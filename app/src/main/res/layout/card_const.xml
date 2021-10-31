@@ -15,8 +15,8 @@
         app:strokeWidth="1dp"
         android:layout_height="0dp"
         android:backgroundTint="@color/white"
-        android:layout_weight="32"
-        >
+        android:layout_weight="32">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -25,9 +25,8 @@
                 android:id="@+id/img"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:src="@drawable/profile_img"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"/>
+                android:layout_marginLeft="30dp" />
 
             <TextView
                 android:id="@+id/Name"
@@ -52,16 +51,14 @@
                     android:id="@+id/ls"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Last Scanned : "
-                    />
+                    android:text="Last Scanned : " />
 
                 <TextView
                     android:id="@+id/place"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/ls"
-                    android:text=""
-                    />
+                    android:text="" />
             </RelativeLayout>
 
             <TextView
@@ -72,12 +69,11 @@
                 android:layout_marginTop="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="12:29, 22/10/2021"/>
+                android:text="12:29, 22/10/2021" />
 
         </RelativeLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
 
 
 </LinearLayout>

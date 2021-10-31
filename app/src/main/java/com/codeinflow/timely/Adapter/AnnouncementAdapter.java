@@ -51,7 +51,7 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView name,msg;
+        TextView name, msg;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
