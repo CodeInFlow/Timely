@@ -60,13 +60,10 @@ public class Main2Activity extends AppCompatActivity {
                     }
                     break;
                 case R.id.navigation_profile:
-
-
-                    Toast.makeText(Main2Activity.this, "Profile", Toast.LENGTH_SHORT).show();
+                    fragment = new Profile();
                     break;
                 case R.id.navigation_announcements:
-                    Toast.makeText(Main2Activity.this, "Announcements", Toast.LENGTH_SHORT).show();
-
+                    fragment = new Announcement();
                     break;
             }
 
