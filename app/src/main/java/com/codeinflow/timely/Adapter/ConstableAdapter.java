@@ -53,7 +53,7 @@ public class ConstableAdapter extends RecyclerView.Adapter<ConstableAdapter.View
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView ConstName,date,place;
+        TextView ConstName, date, place;
         ImageView ConstImage;
 
         public ViewHolder(@NonNull View itemView) {

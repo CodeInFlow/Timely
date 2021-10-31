@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,7 +35,10 @@ public class HomeSubInsp extends Fragment {
     private ArrayList<ConstableModel> ConstableArrayList;
     private ConstableAdapter ConstableRVAdapter;
     private FirebaseFirestore db;
-    String shouid,currentuser;
+    String shouid, currentuser;
+    Handler handler = new Handler();
+    Runnable runnable;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,13 +50,19 @@ public class HomeSubInsp extends Fragment {
         ConstableRV = v.findViewById(R.id.rv_si_constlist);
         db = FirebaseFirestore.getInstance();
 
-        ConstableArrayList = new ArrayList<>();
+
         ConstableRV.setHasFixedSize(true);
         ConstableRV.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        ConstableRVAdapter = new ConstableAdapter(ConstableArrayList, getActivity());
+        handler.postDelayed( runnable = new Runnable() {
+            public void run() {
 
-        ConstableRV.setAdapter(ConstableRVAdapter);
+                getlist();
+
+                handler.postDelayed(runnable, 10000);
+            }
+        }, 10000);
+
 
         getdata();
 
@@ -84,6 +94,9 @@ public class HomeSubInsp extends Fragment {
     }
 
     private void getlist() {
+        ConstableArrayList = new ArrayList<>();
+        ConstableRVAdapter = new ConstableAdapter(ConstableArrayList, getActivity());
+        ConstableRV.setAdapter(ConstableRVAdapter);
 
         db.collection("/Main/RStsMrzO5URIknJJzwybBJTwGvh1/subinsp/sVCCVlElfnNr2tRGr1R76Rj2pGw2/const/").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {

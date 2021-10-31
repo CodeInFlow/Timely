@@ -24,7 +24,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"/>
+        android:layout_weight="5" />
 
     <TextView
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"/>
+        android:layout_weight="10" />
 
     <Button
         android:id="@+id/btnNext"
@@ -51,9 +51,7 @@
         android:textAllCaps="false"
         android:layout_gravity="center"
         android:background="@drawable/rounded_et"
-        android:backgroundTint="@color/yellow1"/>
-
-
+        android:backgroundTint="@color/yellow1" />
 
 
 </LinearLayout>

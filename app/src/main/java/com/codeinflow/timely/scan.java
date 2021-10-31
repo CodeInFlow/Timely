@@ -36,17 +36,16 @@ public class scan extends AppCompatActivity implements ZXingScannerView.ResultHa
 
     ZXingScannerView scannerView;
     private FirebaseFirestore db;
-    String name,img,shouid,siuid,desig,DCode;
-    Map<String,Object> data = new HashMap<>();
+    String name, img, shouid, siuid, desig, DCode;
+    Map<String, Object> data = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        scannerView=new ZXingScannerView(this);
+        scannerView = new ZXingScannerView(this);
         setContentView(scannerView);
 
         db = FirebaseFirestore.getInstance();
-
 
 
         Dexter.withContext(getApplicationContext())
@@ -77,6 +76,7 @@ public class scan extends AppCompatActivity implements ZXingScannerView.ResultHa
         getdata(rawResult);
         onBackPressed();
     }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -95,16 +95,16 @@ public class scan extends AppCompatActivity implements ZXingScannerView.ResultHa
         DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
         String date = df.format(Calendar.getInstance().getTime());
 
-        data.put("name",name);
-        data.put("DCode",DCode);
-        data.put("img",img);
-        data.put("place",rawResult.getText().toString());
-        data.put("date",date);
+        data.put("name", name);
+        data.put("DCode", DCode);
+        data.put("img", img);
+        data.put("place", rawResult.getText().toString());
+        data.put("date", date);
 
 
         db = FirebaseFirestore.getInstance();
         String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DocumentReference dbCourses = db.collection("/Main/"+shouid+"/subinsp/"+siuid+"/const/").document(currentuser);
+        DocumentReference dbCourses = db.collection("/Main/" + shouid + "/subinsp/" + siuid + "/const/").document(currentuser);
 
         dbCourses.set(data)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -138,11 +138,11 @@ public class scan extends AppCompatActivity implements ZXingScannerView.ResultHa
                             shouid = document.getString("shouid");
                             siuid = document.getString("siuid");
                             desig = document.getString("desig");
-                            if(desig.length()==9){
-                                DCode="1";
+                            if (desig.length() == 9) {
+                                DCode = "1";
                             }
-                            if(desig.length()==14){
-                                DCode="2";
+                            if (desig.length() == 14) {
+                                DCode = "2";
                             }
 
                             addDataToFirestore(rawResult);
