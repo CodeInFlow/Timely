@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
-            android:layout_height="30dp">
+            android:layout_height="35dp">
 
             <ImageView
                 android:id="@+id/img_l"
@@ -27,7 +27,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:layout_toRightOf="@+id/img_l"
                 android:text="Timely"
                 android:textColor="@color/black"
@@ -170,7 +170,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/p_name"
-            android:layout_marginLeft="170dp"
             android:layout_marginRight="30dp"
             android:text="SHO Lalbagh Thana, Burhanpur"
             android:textAlignment="textEnd" />

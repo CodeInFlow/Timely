@@ -18,7 +18,7 @@ import android.widget.TextView;
 public class home extends Fragment {
 
     ImageButton scanbtn;
-    public static TextView scantext;
+    public static TextView scantext , currentTime;
     String scannedTxt;
 
     @Override
@@ -35,6 +35,7 @@ public class home extends Fragment {
 
         scanbtn = v.findViewById(R.id.btn_scan);
         scantext = v.findViewById(R.id.checkPoint);
+        currentTime = v.findViewById(R.id.currentTime);
 
 
         scanbtn.setOnClickListener(new View.OnClickListener() {

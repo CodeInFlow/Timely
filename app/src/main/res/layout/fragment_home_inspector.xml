@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
-            android:layout_height="30dp">
+            android:layout_height="35dp">
 
             <ImageView
                 android:id="@+id/img_l"
@@ -25,7 +25,7 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="35dp"
                 android:layout_toRightOf="@+id/img_l"
                 android:text="Timely"
                 android:textColor="@color/black"

@@ -31,8 +31,9 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_weight="20"
-        android:fontFamily="@font/lato_thin"
+        android:fontFamily="@font/lato"
         android:textColor="@color/black"
+        android:textSize="16sp"
         android:text="We're the biggest street gang in  India We're the POLICE."
         android:textAlignment="center" />
 

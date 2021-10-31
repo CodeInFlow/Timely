@@ -39,6 +39,9 @@ public class scan extends AppCompatActivity implements ZXingScannerView.ResultHa
     String name, img, shouid, siuid, desig, DCode;
     Map<String, Object> data = new HashMap<>();
 
+    DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
+    String date = df.format(Calendar.getInstance().getTime());
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +76,7 @@ public class scan extends AppCompatActivity implements ZXingScannerView.ResultHa
     @Override
     public void handleResult(Result rawResult) {
         home.scantext.setText(rawResult.getText());
+        home.currentTime.setText(date);
         getdata(rawResult);
         onBackPressed();
     }
@@ -92,8 +96,7 @@ public class scan extends AppCompatActivity implements ZXingScannerView.ResultHa
 
     private void addDataToFirestore(Result rawResult) {
 
-        DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
-        String date = df.format(Calendar.getInstance().getTime());
+
 
         data.put("name", name);
         data.put("DCode", DCode);

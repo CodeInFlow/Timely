@@ -90,19 +90,7 @@
         android:layout_height="0dp"
         android:layout_weight="5">
 
-        <CheckBox
-            android:id="@+id/cb_login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="30dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/cb_login"
-            android:text="Terms and Condition"
-            android:layout_centerVertical="true" />
     </RelativeLayout>
 
     <LinearLayout
