@@ -41,7 +41,7 @@ public class Announcement extends Fragment {
     EditText Msg;
     RoundedImageView sendbtn;
     String name;
-    Map<String,Object> message = new HashMap<>();
+    Map<String, Object> message = new HashMap<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -77,7 +77,7 @@ public class Announcement extends Fragment {
 
     }
 
-    private void sendmessage(){
+    private void sendmessage() {
         getdata();
         message.put("name", name);
         message.put("msg", Msg.getText().toString());
@@ -122,8 +122,6 @@ public class Announcement extends Fragment {
                 Toast.makeText(getActivity(), "Fail to get the data.", Toast.LENGTH_SHORT).show();
             }
         });
-
-
 
 
     }

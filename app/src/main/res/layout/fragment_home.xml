@@ -18,7 +18,7 @@
             android:id="@+id/img_l"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_logo1"/>
+            android:src="@drawable/ic_logo1" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -33,6 +33,7 @@
 
 
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="3dp"
@@ -40,14 +41,13 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="8dp"
         android:layout_below="@+id/img_l"
-        android:background="@color/yellow1"/>
+        android:background="@color/yellow1" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:src="@drawable/login_bg"
         android:layout_weight="40" />
-
 
 
     <ImageButton
@@ -57,12 +57,12 @@
         android:src="@drawable/ic_scan"
         android:background="@drawable/rounded_et"
 
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="12"/>
+        android:layout_weight="12" />
 
     <RelativeLayout
         android:id="@+id/rl_ls"
@@ -74,16 +74,14 @@
             android:id="@+id/ls"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Last Scanned : "
-            />
+            android:text="Last Scanned : " />
 
         <TextView
             android:id="@+id/currentTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/ls"
-            android:text="23:30"
-            />
+            android:text="23:30" />
     </RelativeLayout>
 
 
@@ -96,9 +94,7 @@
         android:text="Andheri(W)                        Mumbai,Maharashtra,INDIA"
         android:gravity="center_horizontal"
         android:textSize="18sp"
-        android:layout_marginTop="18dp"/>
-
-
+        android:layout_marginTop="18dp" />
 
 
 </LinearLayout>

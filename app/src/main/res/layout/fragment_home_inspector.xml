@@ -6,8 +6,6 @@
     tools:context=".HomeInspector">
 
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +21,7 @@
                 android:id="@+id/img_l"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_logo1"/>
+                android:src="@drawable/ic_logo1" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -38,14 +36,15 @@
 
 
         </RelativeLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-           android:layout_marginTop="8dp"
+            android:layout_marginTop="8dp"
             android:layout_below="@+id/img_l"
-            android:background="@color/yellow1"/>
+            android:background="@color/yellow1" />
 
         <RelativeLayout
             android:id="@+id/rl_si1"
@@ -59,8 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Under Sub Inspector  "
-                android:fontFamily="@font/lato_bold"
-                />
+                android:fontFamily="@font/lato_bold" />
 
             <TextView
                 android:id="@+id/si1_Name"
@@ -69,8 +67,7 @@
                 android:layout_toRightOf="@+id/si1"
                 android:text="Ssurav Singh "
                 android:fontFamily="@font/lato_bold"
-                android:textColor="@color/blue"
-                />
+                android:textColor="@color/blue" />
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -93,8 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Under Sub Inspector  "
-                android:fontFamily="@font/lato_bold"
-                />
+                android:fontFamily="@font/lato_bold" />
 
             <TextView
                 android:id="@+id/si2_Name"
@@ -103,8 +99,7 @@
                 android:layout_toRightOf="@+id/si2"
                 android:text="Ssurav Singh "
                 android:fontFamily="@font/lato_bold"
-                android:textColor="@color/blue"
-                />
+                android:textColor="@color/blue" />
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -127,8 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Under Sub Inspector  "
-                android:fontFamily="@font/lato_bold"
-                />
+                android:fontFamily="@font/lato_bold" />
 
             <TextView
                 android:id="@+id/si3_Name"
@@ -137,8 +131,7 @@
                 android:layout_toRightOf="@+id/si3"
                 android:text="Ssurav Singh "
                 android:fontFamily="@font/lato_bold"
-                android:textColor="@color/blue"
-                />
+                android:textColor="@color/blue" />
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -148,7 +141,6 @@
             android:layout_marginTop="25dp"
             android:overScrollMode="never"
             android:paddingBottom="20dp" />
-
 
 
     </LinearLayout>

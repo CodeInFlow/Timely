@@ -23,7 +23,7 @@
                 android:id="@+id/img_l"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_logo1"/>
+                android:src="@drawable/ic_logo1" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
             android:src="@drawable/intro2_bg"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="50dp"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="30dp" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -60,14 +60,14 @@
                 android:layout_height="wrap_content"
                 android:textSize="26sp"
                 android:fontFamily="@font/lato_bold"
-                android:text="Saurav Singh"/>
+                android:text="Saurav Singh" />
 
             <TextView
                 android:id="@+id/desig"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Constable"
-                android:layout_below="@+id/pName"/>
+                android:layout_below="@+id/pName" />
         </RelativeLayout>
 
 
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:src="@drawable/ic_logo1"/>
+            android:src="@drawable/ic_logo1" />
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -93,53 +93,50 @@
             android:gravity="center_vertical"
             android:layout_weight="2">
 
-        <RelativeLayout
-            android:id="@+id/rl_pp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/ph"
-                android:fontFamily="@font/lato_bold"
+            <RelativeLayout
+                android:id="@+id/rl_pp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:text="PNO. No: "
-                />
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/ph_nos"
+                <TextView
+                    android:id="@+id/ph"
+                    android:fontFamily="@font/lato_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="PNO. No: " />
+
+                <TextView
+                    android:id="@+id/ph_nos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/ph"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="************ " />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_pp1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/ph"
-                android:textSize="16sp"
-                android:fontFamily="@font/lato_bold"
-                android:text="************ " />
-        </RelativeLayout>
+                android:layout_below="@+id/rl_pp"
+                android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:id="@+id/rl_pp1"
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/rl_pp"
-            android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/dob"
+                    android:fontFamily="@font/lato_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DOB: " />
 
-            <TextView
-                android:id="@+id/dob"
-                android:fontFamily="@font/lato_bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DOB: "
-                />
-
-            <TextView
-                android:id="@+id/dob_nos"
-                android:fontFamily="@font/lato_bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/dob"
-                android:text="23/12/2051"
-                />
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/dob_nos"
+                    android:fontFamily="@font/lato_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/dob"
+                    android:text="23/12/2051" />
+            </RelativeLayout>
         </RelativeLayout>
     </LinearLayout>
 
@@ -147,13 +144,14 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="25">
+
         <ImageView
             android:id="@+id/sign"
             android:layout_width="200dp"
             android:layout_height="80dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="40dp"
-            android:layout_marginTop="60dp"/>
+            android:layout_marginTop="60dp" />
 
         <TextView
             android:id="@+id/p_name"
@@ -161,7 +159,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/sign"
             android:text="Hitesh Sukhwani,"
-            android:layout_marginLeft="170dp"/>
+            android:layout_marginLeft="170dp" />
 
         <TextView
             android:id="@+id/area"
@@ -169,7 +167,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/p_name"
             android:text="SHO Lalbagh Thana, Burhanpur"
-            android:layout_marginLeft="170dp"/>
+            android:layout_marginLeft="170dp" />
 
     </RelativeLayout>
 
@@ -187,8 +185,7 @@
             android:fontFamily="@font/lato_bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Issue Date : "
-            />
+            android:text="Issue Date : " />
 
         <TextView
             android:id="@+id/issue_date"
@@ -196,8 +193,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/txt_issue"
-            android:text="21/10/2021"
-            />
+            android:text="21/10/2021" />
     </RelativeLayout>
 
 </LinearLayout>

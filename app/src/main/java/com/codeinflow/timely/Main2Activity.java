@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -42,29 +44,26 @@ public class Main2Activity extends AppCompatActivity {
 
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    if(a.length()==9){
+                    if (a.length() == 9) {
                         fragment = new home();
-                        Log.d("Auth","Constable");
+                        Log.d("Auth", "Constable");
                     }
-                    if(a.length()==13){
+                    if (a.length() == 13) {
 
                         fragment = new HomeSubInsp();
-                        Log.d("Auth","Sub Inspector");
+                        Log.d("Auth", "Sub Inspector");
                     }
-                    if(a.length()==3){
+                    if (a.length() == 3) {
                         fragment = new HomeInspector();
 
-                        Log.d("Auth","Inspector");
+                        Log.d("Auth", "Inspector");
                     }
                     break;
                 case R.id.navigation_profile:
-
-
-                    Toast.makeText(Main2Activity.this,"Profile",Toast.LENGTH_SHORT).show();
+                    fragment = new Profile();
                     break;
                 case R.id.navigation_announcements:
-                    Toast.makeText(Main2Activity.this,"Announcements",Toast.LENGTH_SHORT).show();
-
+                    fragment = new Announcement();
                     break;
             }
 
@@ -85,6 +84,12 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                getWindow().setStatusBarColor(getColor(R.color.white));
+                getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            }
+        }
         navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
@@ -103,17 +108,17 @@ public class Main2Activity extends AppCompatActivity {
                         if (document != null) {
                             a = document.getString("desig");
                             Log.d("LOGGER", a);
-                            if(a.length()==9){
+                            if (a.length() == 9) {
                                 fragment = new home();
-                                Log.d("Auth","Constable");
+                                Log.d("Auth", "Constable");
                             }
-                            if(a.length()==13){
+                            if (a.length() == 13) {
                                 fragment = new HomeSubInsp();
-                                Log.d("Auth","Sub Inspector");
+                                Log.d("Auth", "Sub Inspector");
                             }
-                            if(a.length()==3){
+                            if (a.length() == 3) {
                                 fragment = new HomeInspector();
-                                Log.d("Auth","Inspector");
+                                Log.d("Auth", "Inspector");
                             }
 
                             navView.setSelectedItemId(R.id.navigation_home);
