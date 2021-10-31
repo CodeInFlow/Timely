@@ -1,64 +1,154 @@
 package com.codeinflow.timely;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link announcement#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class announcement extends Fragment {
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+import com.codeinflow.timely.Adapter.AnnouncementAdapter;
+import com.codeinflow.timely.Model.AnnouncementModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.makeramen.roundedimageview.RoundedImageView;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-    public announcement() {
-        // Required empty public constructor
-    }
+public class Announcement extends Fragment {
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment announcement.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static announcement newInstance(String param1, String param2) {
-        announcement fragment = new announcement();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private FirebaseFirestore db;
+    private RecyclerView AnnouncementRV;
+    private ArrayList<AnnouncementModel> AnnouncementArrayList;
+    private AnnouncementAdapter AnnouncementRVAdapter;
+    EditText Msg;
+    RoundedImageView sendbtn;
+    String name;
+    Map<String,Object> message = new HashMap<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_announcement, container, false);
+
+        View v = inflater.inflate(R.layout.fragment_announcement, container, false);
+
+        AnnouncementRV = v.findViewById(R.id.rv_announcements);
+        db = FirebaseFirestore.getInstance();
+
+        AnnouncementArrayList = new ArrayList<>();
+        AnnouncementRV.setHasFixedSize(true);
+        AnnouncementRV.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        AnnouncementRVAdapter = new AnnouncementAdapter(AnnouncementArrayList, getActivity());
+
+        AnnouncementRV.setAdapter(AnnouncementRVAdapter);
+
+
+        Msg = v.findViewById(R.id.msg);
+        sendbtn = v.findViewById(R.id.send);
+
+        sendbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendmessage();
+            }
+        });
+
+        getMessage();
+
+        return v;
+
     }
+
+    private void sendmessage(){
+        getdata();
+        message.put("name", name);
+        message.put("msg", Msg.getText().toString());
+        CollectionReference collectionReference = db.collection("Announcements");
+        collectionReference.add(message)
+                .addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentReference> task) {
+
+                        getMessage();
+
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+    }
+
+    private void getMessage() {
+
+        db.collection("Announcements").get()
+                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                    @Override
+                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                        if (!queryDocumentSnapshots.isEmpty()) {
+                            List<DocumentSnapshot> list = queryDocumentSnapshots.getDocuments();
+                            for (DocumentSnapshot d : list) {
+                                AnnouncementModel c = d.toObject(AnnouncementModel.class);
+                                AnnouncementArrayList.add(c);
+                            }
+                            AnnouncementRVAdapter.notifyDataSetChanged();
+                        } else {
+
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), "Fail to get the data.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
+
+    }
+
+    private void getdata() {
+        String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        if (currentuser.length() > 5) {
+            DocumentReference docRef = db.collection("Users").document(currentuser);
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document != null) {
+                            name = document.getString("name");
+                        } else {
+                            Log.d("LOGGER", "Error");
+                        }
+                    } else {
+                        Log.d("LOGGER", "get failed with ", task.getException());
+                    }
+                }
+            });
+        }
+    }
+
 }

@@ -8,31 +8,46 @@
     android:weightSum="100"
     tools:context=".Intro1">
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="30"
+        android:layout_weight="10" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:gravity="center"
-        android:background="@drawable/rect">
+        android:layout_weight="40">
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/logo"
-            android:layout_gravity="center" />
+            android:id="@+id/logo_login"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_yellow"/>
 
-    </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Timely"
+            android:textColor="@color/yellow1"
+            android:textSize="50sp"
+            android:layout_toRightOf="@+id/logo_login"/>
+
+    </RelativeLayout>
+
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="15" />
+        android:layout_weight="6" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/outlinedTextField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/label"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Email"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -53,7 +68,9 @@
         android:id="@+id/outlinedTextField2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/label"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:hint="Password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -90,10 +107,19 @@
             android:layout_centerVertical="true" />
     </RelativeLayout>
 
-    <View
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6" />
+        android:layout_weight="10"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/login_bg"/>
+    </LinearLayout>
+
+
 
     <Button
         android:id="@+id/btn_login"

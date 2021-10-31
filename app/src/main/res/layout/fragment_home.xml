@@ -21,7 +21,7 @@
         android:layout_height="150dp"
         android:src="@drawable/ic_scan"
         android:background="@drawable/rounded_et"
-        android:backgroundTint="@color/themeColor"
+
         android:layout_gravity="center_horizontal"/>
 
     <View
