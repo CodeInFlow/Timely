@@ -1,5 +1,7 @@
 package com.codeinflow.timely;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -46,6 +48,13 @@ public class HomeSubInsp extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_home_sub_insp, container, false);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                getActivity().getWindow().setStatusBarColor(Color.parseColor("#ffffff"));
+                getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            }
+        }
+
 
         ConstableRV = v.findViewById(R.id.rv_si_constlist);
         db = FirebaseFirestore.getInstance();
@@ -56,9 +65,7 @@ public class HomeSubInsp extends Fragment {
 
         handler.postDelayed( runnable = new Runnable() {
             public void run() {
-
                 getlist();
-
                 handler.postDelayed(runnable, 10000);
             }
         }, 10000);

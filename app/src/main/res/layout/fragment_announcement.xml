@@ -34,10 +34,11 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_above="@+id/rl"
         android:id="@+id/rv_announcements"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="65dp"
         android:overScrollMode="never" />
 

@@ -96,46 +96,46 @@
             <RelativeLayout
                 android:id="@+id/rl_pp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp">
 
                 <TextView
                     android:id="@+id/ph"
-                    android:fontFamily="@font/lato_bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:text="PNO. No: " />
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Police ID : "
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/ph_nos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/ph"
-                    android:textSize="16sp"
                     android:fontFamily="@font/lato_bold"
-                    android:text="************ " />
+                    android:textSize="14sp" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:id="@+id/rl_pp1"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/rl_pp"
-                android:layout_height="wrap_content">
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:id="@+id/dob"
-                    android:fontFamily="@font/lato_bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="DOB: " />
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Date of Birth : " />
 
                 <TextView
                     android:id="@+id/dob_nos"
-                    android:fontFamily="@font/lato_bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/dob"
-                    android:text="23/12/2051" />
+                    android:fontFamily="@font/lato_bold" />
             </RelativeLayout>
         </RelativeLayout>
     </LinearLayout>
@@ -158,16 +158,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/sign"
+            android:layout_marginLeft="170dp"
+            android:layout_marginRight="30dp"
             android:text="Hitesh Sukhwani,"
-            android:layout_marginLeft="170dp" />
+            android:textAlignment="textEnd" />
 
         <TextView
             android:id="@+id/area"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/p_name"
+            android:layout_marginLeft="170dp"
+            android:layout_marginRight="30dp"
             android:text="SHO Lalbagh Thana, Burhanpur"
-            android:layout_marginLeft="170dp" />
+            android:textAlignment="textEnd" />
 
     </RelativeLayout>
 
