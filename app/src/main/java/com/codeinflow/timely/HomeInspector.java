@@ -1,5 +1,7 @@
 package com.codeinflow.timely;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -36,6 +38,12 @@ public class HomeInspector extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_home_inspector, container, false);
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                getActivity().getWindow().setStatusBarColor(Color.parseColor("#ffffff"));
+                getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            }
+        }
 
         ConstableRV1 = v.findViewById(R.id.rv_si1);
         ConstableRV2 = v.findViewById(R.id.rv_si2);
@@ -88,7 +96,7 @@ public class HomeInspector extends Fragment {
     }
 
     private void getdata2() {
-        db.collection("/Main/RStsMrzO5URIknJJzwybBJTwGvh1/subinsp/sVCCVlElfnNr2tRGr1R76Rj2pGw2/const").get()
+        db.collection("/Main/RStsMrzO5URIknJJzwybBJTwGvh1/subinsp/kDEigbuYq7NEIZ2jEqxRdVhqWrb2/const").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -113,7 +121,7 @@ public class HomeInspector extends Fragment {
     }
 
     private void getdata3() {
-        db.collection("/Main/RStsMrzO5URIknJJzwybBJTwGvh1/subinsp/sVCCVlElfnNr2tRGr1R76Rj2pGw2/const").get()
+        db.collection("/Main/RStsMrzO5URIknJJzwybBJTwGvh1/subinsp/AU9u9FG07iObyOUBpZVghFG8VPh1/const").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {

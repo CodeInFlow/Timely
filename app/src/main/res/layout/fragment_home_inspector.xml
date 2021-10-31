@@ -65,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/si1"
-                android:text="Ssurav Singh "
+                android:text="Saurav Singh Rathore"
                 android:fontFamily="@font/lato_bold"
                 android:textColor="@color/blue" />
         </RelativeLayout>
@@ -97,7 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/si2"
-                android:text="Ssurav Singh "
+                android:text="Ruhi Rathore"
                 android:fontFamily="@font/lato_bold"
                 android:textColor="@color/blue" />
         </RelativeLayout>
@@ -129,7 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/si3"
-                android:text="Ssurav Singh "
+                android:text="Aman Raj"
                 android:fontFamily="@font/lato_bold"
                 android:textColor="@color/blue" />
         </RelativeLayout>

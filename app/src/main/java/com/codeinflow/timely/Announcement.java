@@ -52,13 +52,8 @@ public class Announcement extends Fragment {
         AnnouncementRV = v.findViewById(R.id.rv_announcements);
         db = FirebaseFirestore.getInstance();
 
-        AnnouncementArrayList = new ArrayList<>();
         AnnouncementRV.setHasFixedSize(true);
         AnnouncementRV.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        AnnouncementRVAdapter = new AnnouncementAdapter(AnnouncementArrayList, getActivity());
-
-        AnnouncementRV.setAdapter(AnnouncementRVAdapter);
 
 
         Msg = v.findViewById(R.id.msg);
@@ -100,6 +95,11 @@ public class Announcement extends Fragment {
     }
 
     private void getMessage() {
+
+        AnnouncementArrayList = new ArrayList<>();
+        AnnouncementRVAdapter = new AnnouncementAdapter(AnnouncementArrayList, getActivity());
+        AnnouncementRV.setAdapter(AnnouncementRVAdapter);
+
 
         db.collection("Announcements").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
