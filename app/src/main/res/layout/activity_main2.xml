@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="100"
@@ -15,14 +17,17 @@
         android:layout_weight="90" />
 
 
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10"
+
         android:background="@color/white"
         app:itemIconTint="@color/yellow1"
         app:itemTextColor="@color/yellow1"
         app:menu="@menu/nav" />
+
 
 </LinearLayout>

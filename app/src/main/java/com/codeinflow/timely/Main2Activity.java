@@ -9,6 +9,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,12 +23,15 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+
 public class Main2Activity extends AppCompatActivity {
 
     private static BottomNavigationView navView;
 
+
     private FirebaseFirestore db;
     String a;
+
 
     Fragment fragment;
 
@@ -40,19 +47,24 @@ public class Main2Activity extends AppCompatActivity {
                         Log.d("Auth","Constable");
                     }
                     if(a.length()==13){
+
                         fragment = new HomeSubInsp();
                         Log.d("Auth","Sub Inspector");
                     }
                     if(a.length()==3){
                         fragment = new HomeInspector();
+
                         Log.d("Auth","Inspector");
                     }
                     break;
                 case R.id.navigation_profile:
+
+
                     Toast.makeText(Main2Activity.this,"Profile",Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.navigation_announcements:
                     Toast.makeText(Main2Activity.this,"Announcements",Toast.LENGTH_SHORT).show();
+
                     break;
             }
 
