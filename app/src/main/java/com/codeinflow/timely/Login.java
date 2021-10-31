@@ -5,10 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,8 +18,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Login extends Fragment {
@@ -90,54 +85,6 @@ public class Login extends Fragment {
                         Intent intent = new Intent(getActivity(), Main2Activity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
-
-                        String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-                        if (currentuser.length() > 5) {
-                            DocumentReference docRef = db.collection("Users").document(currentuser);
-                            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                @Override
-                                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                    if (task.isSuccessful()) {
-                                        DocumentSnapshot document = task.getResult();
-                                        if (document != null) {
-                                            String a = document.getString("desig");
-                                            Log.d("LOGGER", a);
-                                            if (a.length() == 9) {
-                                                Fragment fragment = new home();
-                                                FragmentManager fragmentManager = getFragmentManager();
-                                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                                                fragmentTransaction.replace(R.id.frag_container1, fragment);
-                                                fragmentTransaction.addToBackStack(null);
-                                                fragmentTransaction.commit();
-                                                Log.d("Auth", "Constable");
-                                            }
-                                            if (a.length() == 13) {
-                                                Fragment fragment = new home();
-                                                FragmentManager fragmentManager = getFragmentManager();
-                                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                                                fragmentTransaction.replace(R.id.frag_container1, fragment);
-                                                fragmentTransaction.addToBackStack(null);
-                                                fragmentTransaction.commit();
-                                                Log.d("Auth", "Sub Inspector");
-                                            }
-                                            if (a.length() == 3) {
-                                                Fragment fragment = new home();
-                                                FragmentManager fragmentManager = getFragmentManager();
-                                                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                                                fragmentTransaction.replace(R.id.frag_container1, fragment);
-                                                fragmentTransaction.addToBackStack(null);
-                                                fragmentTransaction.commit();
-                                                Log.d("Auth", "Inspector");
-                                            }
-                                        } else {
-                                            Log.d("LOGGER", "Error");
-                                        }
-                                    } else {
-                                        Log.d("LOGGER", "get failed with ", task.getException());
-                                    }
-                                }
-                            });
-                        }
 
 
                     } else {

@@ -10,11 +10,29 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 
 public class Main2Activity extends AppCompatActivity {
 
     private static BottomNavigationView navView;
+
+
+    private FirebaseFirestore db;
+    String a;
+
+
     Fragment fragment;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -29,19 +47,24 @@ public class Main2Activity extends AppCompatActivity {
                         Log.d("Auth","Constable");
                     }
                     if(a.length()==13){
-                        fragment = new SubInspHome();
+
+                        fragment = new HomeSubInsp();
                         Log.d("Auth","Sub Inspector");
                     }
                     if(a.length()==3){
-                        fragment = new InspHome();
+                        fragment = new HomeInspector();
+
                         Log.d("Auth","Inspector");
                     }
                     break;
                 case R.id.navigation_profile:
-                    fragment = new Profile();
+
+
+                    Toast.makeText(Main2Activity.this,"Profile",Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.navigation_announcements:
-                    fragment = new announcement();
+                    Toast.makeText(Main2Activity.this,"Announcements",Toast.LENGTH_SHORT).show();
+
                     break;
             }
 
@@ -61,5 +84,48 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        navView = findViewById(R.id.nav_view);
+        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        db = FirebaseFirestore.getInstance();
+
+        if (currentuser.length() > 5) {
+            DocumentReference docRef = db.collection("Users").document(currentuser);
+
+            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+
+                        if (document != null) {
+                            a = document.getString("desig");
+                            Log.d("LOGGER", a);
+                            if(a.length()==9){
+                                fragment = new home();
+                                Log.d("Auth","Constable");
+                            }
+                            if(a.length()==13){
+                                fragment = new HomeSubInsp();
+                                Log.d("Auth","Sub Inspector");
+                            }
+                            if(a.length()==3){
+                                fragment = new HomeInspector();
+                                Log.d("Auth","Inspector");
+                            }
+
+                            navView.setSelectedItemId(R.id.navigation_home);
+                        } else {
+                            Log.d("LOGGER", "Error");
+                        }
+                    } else {
+                        Log.d("LOGGER", "get failed with ", task.getException());
+                    }
+                }
+            });
+        }
+
     }
 }
