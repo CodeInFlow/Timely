@@ -96,7 +96,7 @@ public class HomeInspector extends Fragment {
     }
 
     private void getdata2() {
-        db.collection("/Main/RStsMrzO5URIknJJzwybBJTwGvh1/subinsp/kDEigbuYq7NEIZ2jEqxRdVhqWrb2/const").get()
+        db.collection("/Main/RStsMrzO5URIknJJzwybBJTwGvh1/subinsp/sVCCVlElfnNr2tRGr1R76Rj2pGw2/const").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -121,7 +121,7 @@ public class HomeInspector extends Fragment {
     }
 
     private void getdata3() {
-        db.collection("/Main/RStsMrzO5URIknJJzwybBJTwGvh1/subinsp/AU9u9FG07iObyOUBpZVghFG8VPh1/const").get()
+        db.collection("/Main/RStsMrzO5URIknJJzwybBJTwGvh1/subinsp/sVCCVlElfnNr2tRGr1R76Rj2pGw2/const").get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
