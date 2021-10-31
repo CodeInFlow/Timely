@@ -32,10 +32,11 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_weight="10"
-        android:fontFamily="@font/lato_thin"
-        android:textColor="@color/black"
+        android:fontFamily="@font/lato"
         android:text="We can do this the easy way or the hard way, but either way, it's gonna be done."
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textColor="@color/black" />
 
     <View
         android:layout_width="match_parent"
